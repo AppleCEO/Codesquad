@@ -2,11 +2,11 @@ import UIKit
 
 //gugu() 함수 선언부(callee)
 func gugu(number : Int) {
-    var j = number
+    let j = number
     var gugudan = [Int].init(repeating: 0, count: 9)
     
     var index=0
-    for i in gugudan {
+    for _ in gugudan {
         gugudan[index] = j*(index+1)
         index+=1
     }

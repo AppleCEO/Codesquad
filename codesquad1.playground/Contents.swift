@@ -63,4 +63,19 @@ result = 5 * 8
 print("\(dan5) * 8 = \(result)")
 result = 5 * 9
 print("\(dan5) * 9 = \(result)")
-
+print("")
+let dan6 = 6
+print("6단")
+var i = 1
+while (i < 10) {
+    result = dan6 * i
+    print("\(dan6) * \(i) = \(result)")
+    i = i + 1 //i값을 증가
+}
+print("")
+let dan7 = 7
+print("7단")
+for i in 1..<10 {
+    result = dan7 * i
+    print("\(dan7) * \(i) = \(result)")
+}

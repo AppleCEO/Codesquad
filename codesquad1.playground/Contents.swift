@@ -1,15 +1,14 @@
 import UIKit
 
+var j = 2
+var gugudan = [Int].init(repeating: 0, count: 9)
 
-for j in 2..<10 {
-    if (j % 2 == 1) {
-        print("")
-        print("\(j)단")
-        for i in 1..<10 {
-            print("\(j) * \(i) = \(j*i)")
-        }
-    } else {
-        // 짝수
-    }
-    
+var index=0
+for i in gugudan {
+    gugudan[index] = j*(index+1)
+    index+=1
+}
+
+for i in gugudan {
+    print("\(j) * \(i/j) = \(i)")
 }

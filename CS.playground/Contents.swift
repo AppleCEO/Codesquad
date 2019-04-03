@@ -84,5 +84,17 @@ func dec2bin(_ decimal:Int) -> [Bool] {
     return binary
 }
 
-dec2bin(10)
-dec2bin(173)
+func bin2dec(_ bin:[Bool]) -> Int {
+    var decimal:Int = 0
+    var binary:Int = 1
+    for input in bin {
+        if(input) {
+            decimal += binary
+        }
+        binary *= 2
+    }
+    
+    return decimal
+}
+
+bin2dec([true,true,true,true,false,true,false,true])

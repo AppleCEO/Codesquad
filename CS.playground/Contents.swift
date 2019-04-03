@@ -64,4 +64,25 @@ func byteadder(_ byteA:[Bool], _ byteB:[Bool]) -> [Bool] {
     return result
 }
 
-byteadder([ true, true, false, false, true, false, true, false ], [ true, true, false, true, true, false, false, true ])
+func dec2bin(_ decimal:Int) -> [Bool] {
+    var binary = Array<Bool>()
+    var input = decimal
+    while(true){
+        if(input%2>0) {
+            binary.append(true)
+        } else {
+            binary.append(false)
+        }
+        
+        if(input<2){
+            break
+        } else {
+            input /= 2
+        }
+    }
+    
+    return binary
+}
+
+dec2bin(10)
+dec2bin(173)

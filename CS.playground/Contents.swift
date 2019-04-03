@@ -8,4 +8,14 @@ func nand(paramA: Bool, paramB: Bool) -> Bool {
     return answer;
 }
 
-nand(paramA: true, paramB: true)
+func nor(paramA: Bool, paramB: Bool) -> Bool {
+    var answer:Bool = false;
+    if !paramA && !paramB {
+        answer = true
+    }
+    return answer;
+}
+
+nor(paramA: false, paramB: false)
+
+

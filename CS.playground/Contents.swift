@@ -50,11 +50,18 @@ func fulladder(_ bitA:Bool, _ bitB:Bool, _ carry:Bool) -> [Bool] {
 }
 
 func byteadder(_ byteA:[Bool], _ byteB:[Bool]) -> [Bool] {
+    var bin1 = byteA
+    var bin2 = byteB
+    
+    if bin1.count != bin2.count {
+        (bin1, bin2) = binsizemacth(byteA, byteB)
+    }
+        
     var carry = false
     var result = Array<Bool>()
     var sumResult = Array<Bool>()
-    for index in 0..<byteA.count {
-        sumResult = fulladder(byteA[index], byteB[index], carry)
+    for index in 0..<bin1.count {
+        sumResult = fulladder(bin1[index], bin2[index], carry)
         carry = sumResult[0]
         result.append(sumResult[1])
     }
@@ -62,6 +69,25 @@ func byteadder(_ byteA:[Bool], _ byteB:[Bool]) -> [Bool] {
     result.append(carry)
     
     return result
+}
+
+func binsizemacth(_ byteA:[Bool], _ byteB:[Bool]) -> ([Bool], [Bool]) {
+    var bin1 = byteA
+    var bin2 = byteB
+    
+    if byteA.count < byteB.count {
+        let countDiff = byteB.count-byteA.count
+        for _ in 0..<countDiff {
+            bin1.append(false)
+        }
+    } else if byteA.count > byteB.count {
+        let countDiff = byteA.count-byteB.count
+        for _ in 0..<countDiff {
+            bin2.append(false)
+        }
+    }
+    
+    return (bin1, bin2)
 }
 
 func dec2bin(_ decimal:Int) -> [Bool] {
@@ -97,4 +123,11 @@ func bin2dec(_ bin:[Bool]) -> Int {
     return decimal
 }
 
-bin2dec([true,true,true,true,false,true,false,true])
+let dec1 = 10
+let dec2 = 173
+let bin1 = dec2bin(dec1)
+let bin2 = dec2bin(dec2)
+let binSum = byteadder(bin1, bin2)
+let decSum = bin2dec(binSum)
+
+print(decSum)

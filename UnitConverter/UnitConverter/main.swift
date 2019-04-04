@@ -5,77 +5,90 @@
 //  Created by Doran & Dominic on 02/04/2019.
 //  Copyright © 2019 hw. All rights reserved.
 //
+
 import Foundation
 import Darwin
 
-// feet
 let mToCm:Double = 100
-let inchToCm:Double = 2.54
-let yardToCm:Double = 91.44
 
-
-func convert (_ arr : (doubleValue: Double, feet: String), mode: String) -> (Double, String) {
-    switch mode {
-    case "CmToM" :
-        return (arr.doubleValue/mToCm, "m")
-    case "MToCm" :
-        return (arr.doubleValue*mToCm, "cm")
-    case "CmToInch" :
-        return (arr.doubleValue/inchToCm, "inch")
-    case "InchToCm" :
-        return (arr.doubleValue*inchToCm, "cm")
-    case "CmToYard" :
-        return (arr.doubleValue/yardToCm, "yard")
-    case "YardToCm" :
-        return (arr.doubleValue*yardToCm, "cm")
+func convert (_ num: Double, _ from: String, _ to: String) -> (Double, String) {
+    var result: (Double, String)
+    
+    switch from {
+    case "cm" :
+        result = convertFromCm((num, to))
+    case "m" :
+        result = convertFromM((num, to))
     default :
         print("지원하지 않는 모드입니다")
         unitConverter()
-        return (arr.doubleValue, "a")
+        exit(0)
     }
+    return result
+}
+
+func convertFromCm (_ input: (number: Double, to: String) ) -> (Double, String) {
+    var result = (input.number, input.to)
+    
+    switch input.to {
+    default:
+        result.0 = input.number/mToCm
+        result.1 = "m"
+    }
+    
+    return result
+}
+
+func convertFromM (_ input: (number: Double, to: String) ) -> (Double, String) {
+    var result: (Double, String)
+    
+    switch input.to {
+    default:
+        result = (input.number*mToCm, "cm")
+    }
+    
+    return result
+}
+
+// 입력받아 숫자와 단위를 구분하는 함수
+func inputsMaker(_ `in` : String)->(Double, String){
+    let unit = `in`.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789."))
+    let numDouble:Double = Double(`in`.trimmingCharacters(in: CharacterSet(charactersIn: unit))) ?? 0.0
+    
+    if(numDouble == 0.0){
+        print("숫자를 정확히 입력해주세요.")
+        unitConverter()
+    }
+    
+    return (numDouble, unit)
+}
+
+// 단위를 자르는 함수
+func unitsMaker(_ unit : String)->(String, String){
+    var units = unit.split(separator: " ")
+    if(units.count<2) {
+        let unitDiff = 2-units.count
+        for _ in 0..<unitDiff {
+            units.append("")
+        }
+    }
+    
+    return (String(units[0]), String(units[1]))
 }
 
 
 func unitConverter() -> Void {
-    // input from user
-    let str = readLine()
+    let inputFromUser = readLine()
     
-    let inputNumber : Double = NSString(string: str! as NSString).doubleValue
-    var inputTuple = (0.0, "start")
-    
-    if str == nil {
+    if let input = inputFromUser {
+        var (num, unit) = inputsMaker(input)
+        var (from, to) = unitsMaker(unit)
         
-    } else {
-        if str!.suffix(7) == "cm inch" {
-            inputTuple = convert( (inputNumber, "cm"), mode: "CmToInch")
-        } else if str!.suffix(6) == "inch m" {
-            inputTuple = convert( (inputNumber, "inch"), mode: "InchToCm")
-            inputTuple = convert(inputTuple, mode: "CmToM")
-        } else if str!.suffix(6) == "m inch" {
-            inputTuple = convert( (inputNumber, "m"), mode: "MToCm")
-            inputTuple = convert(inputTuple, mode: "CmToInch")
-        } else if str!.suffix(6) == "yard m" || str!.suffix(4) == "yard" {
-            inputTuple = convert((inputNumber, "yard"), mode: "YardToCm")
-            inputTuple = convert(inputTuple, mode: "CmToM")
-        } else if str!.suffix(6) == "m yard" {
-            inputTuple = convert((inputNumber, "m"), mode: "MToCm")
-            inputTuple = convert(inputTuple, mode: "CmToYard")
-        } else if str!.suffix(2) == "cm" {
-            inputTuple = convert((inputNumber, "cm"), mode: "CmToM")
-        } else if str!.suffix(1) == "m" {
-            inputTuple = convert((inputNumber, "m"), mode: "MToCm")
-        } else if str!.suffix(4) == "inch" {
-            inputTuple = convert((inputNumber, "inch"), mode: "InchToCm")
-        } else if str! == "quit" || str! == "q" {
-            exit(0)
-        } else {
-            print("지원하지 않는 단위입니다.")
-        }
-        print("\(inputTuple.0)\(inputTuple.1)")
-        unitConverter()
+        var result = convert(num, from, to)
+        
+        print("\(result.0)\(result.1)")
     }
 }
-
 
 // RUN
 unitConverter()

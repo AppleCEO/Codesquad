@@ -30,20 +30,35 @@ class vmgitTest: XCTestCase {
         }
     }
 
-    func testInit() {
-        var git = Git(repositoryName: [])
+    func testInit () {
+        var git = Git()
         XCTAssertEqual(git.command("init document"), "created document repository.")
-        XCTAssertTrue(git.repositoryName.contains("document"))
+        XCTAssertTrue(git.repositoryNames.contains("document"))
         XCTAssertEqual(git.command("init a b c"), "repository 이름에 공백이 들어갈 수 없습니다")
-        XCTAssertFalse(git.repositoryName.contains("a b c"), "repository 이름에 공백이 들어갈 수 없습니다.")
+        XCTAssertFalse(git.repositoryNames.contains("a b c"), "repository 이름에 공백이 들어갈 수 없습니다.")
     }
     
-    func testStatus() {
-        var git = Git(repositoryName: [])
+    func testStatus () {
+        var git = Git()
         git.command("init document")
         XCTAssertEqual(git.command("status"), "document/")
         XCTAssertEqual(git.command("status local no"), "document/")
         XCTAssertEqual(git.command("status local document"), "아직 파일이 없습니다.")
+    }
+    
+    func testCheckout () {
+        var git = Git()
+        git.command("checkout document")
+        XCTAssertEqual(git.currentRepository, "")
+        git.command("init document")
+        git.command("checkout document")
+        XCTAssertEqual(git.currentRepository, "document")
+        git.command("checkout abc")
+        XCTAssertEqual(git.currentRepository, "")
+        git.command("checkout document")
+        XCTAssertEqual(git.currentRepository, "document")
+        git.command("checkout")
+        XCTAssertEqual(git.currentRepository, "")
     }
 }
 

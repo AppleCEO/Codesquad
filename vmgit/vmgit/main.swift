@@ -9,16 +9,15 @@
 import Foundation
 
 func main () {
-    var git = Git(repositoryName: [])
+    var git = Git()
     var inputView = InputView()
     
     while true {
-        inputView.readInput()
+        inputView.readInput(git.currentRepository)
         if inputView.valueEntered == "" {
             break
         }
         print(git.command(inputView.valueEntered))
-        
     }
 }
 

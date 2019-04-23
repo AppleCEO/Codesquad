@@ -11,8 +11,12 @@ import Foundation
 struct InputView {
     private(set) var valueEntered: String = ""
     
-    mutating func readInput () {
-        print("/>", terminator: "")
+    mutating func readInput (_ repository: String) {
+        if repository != "" {
+            print("/\(repository)/>", terminator: "")
+        } else {
+            print("/>", terminator: "")
+        }
         valueEntered = readLine() ?? "0"
     }
 }

@@ -60,5 +60,15 @@ class vmgitTest: XCTestCase {
         git.command("checkout")
         XCTAssertEqual(git.currentRepository, "")
     }
+    
+    func testNew () {
+        var git = Git()
+        XCTAssertNotEqual(git.command("init document"), "잘못된 명령어입니다.")
+        XCTAssertNotEqual(git.command("checkout document"), "잘못된 명령어입니다.")
+        XCTAssertNotEqual(git.command("new readme"), "잘못된 명령어입니다.")
+        let fileName = git.workingDirectory["document"]
+        XCTAssertNotNil(fileName)
+        XCTAssertTrue(fileName?.contains("readme") ?? false)
+    }
 }
 

@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33D35ED5227C205F00B287F8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D35ED4227C205F00B287F8 /* main.swift */; };
-		33D35EDC227C20FA00B287F8 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D35EDB227C20FA00B287F8 /* InputView.swift */; };
+		33902150228AAB1B009ADE9F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390214F228AAB1B009ADE9F /* main.swift */; };
+		33902157228AB406009ADE9F /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33902156228AB406009ADE9F /* Protocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		33D35ECF227C205F00B287F8 /* CopyFiles */ = {
+		3390214A228AAB1B009ADE9F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -24,13 +24,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		33D35ED1227C205F00B287F8 /* HugeLadderGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HugeLadderGame; sourceTree = BUILT_PRODUCTS_DIR; };
-		33D35ED4227C205F00B287F8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		33D35EDB227C20FA00B287F8 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		3390214C228AAB1B009ADE9F /* POPSample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = POPSample; sourceTree = BUILT_PRODUCTS_DIR; };
+		3390214F228AAB1B009ADE9F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		33902156228AB406009ADE9F /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		33D35ECE227C205F00B287F8 /* Frameworks */ = {
+		33902149228AAB1B009ADE9F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -40,97 +40,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		33D35EC8227C205F00B287F8 = {
+		33902143228AAB1B009ADE9F = {
 			isa = PBXGroup;
 			children = (
-				33D35ED3227C205F00B287F8 /* HugeLadderGame */,
-				33D35ED2227C205F00B287F8 /* Products */,
+				3390214E228AAB1B009ADE9F /* POPSample */,
+				3390214D228AAB1B009ADE9F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		33D35ED2227C205F00B287F8 /* Products */ = {
+		3390214D228AAB1B009ADE9F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				33D35ED1227C205F00B287F8 /* HugeLadderGame */,
+				3390214C228AAB1B009ADE9F /* POPSample */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		33D35ED3227C205F00B287F8 /* HugeLadderGame */ = {
+		3390214E228AAB1B009ADE9F /* POPSample */ = {
 			isa = PBXGroup;
 			children = (
-				33D35ED4227C205F00B287F8 /* main.swift */,
-				33D35EDB227C20FA00B287F8 /* InputView.swift */,
+				3390214F228AAB1B009ADE9F /* main.swift */,
+				33902156228AB406009ADE9F /* Protocol.swift */,
 			);
-			path = HugeLadderGame;
+			path = POPSample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		33D35ED0227C205F00B287F8 /* HugeLadderGame */ = {
+		3390214B228AAB1B009ADE9F /* POPSample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 33D35ED8227C205F00B287F8 /* Build configuration list for PBXNativeTarget "HugeLadderGame" */;
+			buildConfigurationList = 33902153228AAB1B009ADE9F /* Build configuration list for PBXNativeTarget "POPSample" */;
 			buildPhases = (
-				33D35ECD227C205F00B287F8 /* Sources */,
-				33D35ECE227C205F00B287F8 /* Frameworks */,
-				33D35ECF227C205F00B287F8 /* CopyFiles */,
+				33902148228AAB1B009ADE9F /* Sources */,
+				33902149228AAB1B009ADE9F /* Frameworks */,
+				3390214A228AAB1B009ADE9F /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = HugeLadderGame;
-			productName = HugeLadderGame;
-			productReference = 33D35ED1227C205F00B287F8 /* HugeLadderGame */;
+			name = POPSample;
+			productName = POPSample;
+			productReference = 3390214C228AAB1B009ADE9F /* POPSample */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		33D35EC9227C205F00B287F8 /* Project object */ = {
+		33902144228AAB1B009ADE9F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "길준호";
 				TargetAttributes = {
-					33D35ED0227C205F00B287F8 = {
+					3390214B228AAB1B009ADE9F = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 33D35ECC227C205F00B287F8 /* Build configuration list for PBXProject "HugeLadderGame" */;
+			buildConfigurationList = 33902147228AAB1B009ADE9F /* Build configuration list for PBXProject "POPSample" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 33D35EC8227C205F00B287F8;
-			productRefGroup = 33D35ED2227C205F00B287F8 /* Products */;
+			mainGroup = 33902143228AAB1B009ADE9F;
+			productRefGroup = 3390214D228AAB1B009ADE9F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				33D35ED0227C205F00B287F8 /* HugeLadderGame */,
+				3390214B228AAB1B009ADE9F /* POPSample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		33D35ECD227C205F00B287F8 /* Sources */ = {
+		33902148228AAB1B009ADE9F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33D35ED5227C205F00B287F8 /* main.swift in Sources */,
-				33D35EDC227C20FA00B287F8 /* InputView.swift in Sources */,
+				33902150228AAB1B009ADE9F /* main.swift in Sources */,
+				33902157228AB406009ADE9F /* Protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		33D35ED6227C205F00B287F8 /* Debug */ = {
+		33902151228AAB1B009ADE9F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -191,7 +191,7 @@
 			};
 			name = Debug;
 		};
-		33D35ED7227C205F00B287F8 /* Release */ = {
+		33902152228AAB1B009ADE9F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -245,7 +245,7 @@
 			};
 			name = Release;
 		};
-		33D35ED9227C205F00B287F8 /* Debug */ = {
+		33902154228AAB1B009ADE9F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -254,7 +254,7 @@
 			};
 			name = Debug;
 		};
-		33D35EDA227C205F00B287F8 /* Release */ = {
+		33902155228AAB1B009ADE9F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -266,25 +266,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		33D35ECC227C205F00B287F8 /* Build configuration list for PBXProject "HugeLadderGame" */ = {
+		33902147228AAB1B009ADE9F /* Build configuration list for PBXProject "POPSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				33D35ED6227C205F00B287F8 /* Debug */,
-				33D35ED7227C205F00B287F8 /* Release */,
+				33902151228AAB1B009ADE9F /* Debug */,
+				33902152228AAB1B009ADE9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		33D35ED8227C205F00B287F8 /* Build configuration list for PBXNativeTarget "HugeLadderGame" */ = {
+		33902153228AAB1B009ADE9F /* Build configuration list for PBXNativeTarget "POPSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				33D35ED9227C205F00B287F8 /* Debug */,
-				33D35EDA227C205F00B287F8 /* Release */,
+				33902154228AAB1B009ADE9F /* Debug */,
+				33902155228AAB1B009ADE9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 33D35EC9227C205F00B287F8 /* Project object */;
+	rootObject = 33902144228AAB1B009ADE9F /* Project object */;
 }
